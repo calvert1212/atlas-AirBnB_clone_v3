@@ -76,7 +76,9 @@ class DBStorage:
         self.__session.remove()
 
     def get(self, cls, id):
-        """Retrieve one object based on class and ID."""
+        """
+        Retrieve one object based on class and ID.
+        """
         try:
             return self.__session.query(cls).filter_by(id=id).one()
         except sqlalchemy.orm.exc.NoResultFound:
@@ -85,7 +87,8 @@ class DBStorage:
     def count(self, cls=None):
         """
         Count the number of objects in storage,
-        optionally filtered by class."""
+        optionally filtered by class.
+        """
         if cls is None:
             return self.__session.query(
                 sqlalchemy.func.count(sqlalchemy.distinct(Base.id))).scalar()

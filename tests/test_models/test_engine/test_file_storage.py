@@ -70,7 +70,7 @@ test_file_storage.py'])
 
 class TestFileStorage(unittest.TestCase):
     """Test the FileStorage class"""
-    
+
     def setUp(self):
         """Set up the test environment"""
         self.storage = file_storage.FileStorage()
@@ -78,7 +78,9 @@ class TestFileStorage(unittest.TestCase):
         self.storage.new(self.user)
 
     def test_get(self):
-        """ Test the get method """
+        """
+        Test the get method
+        """
         # Test retrieving an existing object
         retrieved_user = self.storage.get(User, self.user.id)
         self.assertIsNotNone(retrieved_user)
@@ -89,7 +91,9 @@ class TestFileStorage(unittest.TestCase):
         self.assertIsNone(non_existing_user)
 
     def test_count(self):
-        """Test the count method"""
+        """
+        Test the count method
+        """
         # Test counting all objects
         count_all = self.storage.count()
         self.assertEqual(count_all, 1)
@@ -149,4 +153,4 @@ class TestFileStorage(unittest.TestCase):
 if __name__ == '__main__':
 
 
-           unittest.main()
+    unittest.main()
