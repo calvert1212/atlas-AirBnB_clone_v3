@@ -76,10 +76,10 @@ class TestFileStorage(unittest.TestCase):
         self.storage.reload()
 
     def test_get_existing_object(self):
-        # Assuming you have added a User object with ID '123'
-        user = self.storage.get(User, '123')
+        # Assuming you have added a User object with ID '1'
+        user = self.storage.get(User, '1')
         self.assertIsNotNone(user)
-        self.assertEqual(user.id, '123')
+        self.assertEqual(user.id, '1')
 
     def test_get_nonexistent_object(self):
         user = self.storage.get(User, 'nonexistent_id')
