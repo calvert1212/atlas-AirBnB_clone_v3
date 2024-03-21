@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Uses API to create and update users
-"""
+"""Uses API to create and update users"""
 
 from models.user import User
 from api.v1.views import app_views
