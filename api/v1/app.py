@@ -25,6 +25,8 @@ app.register_blueprint(app_views)
 
 
 """Tears down Flask"""
+
+
 @app.teardown_appcontext
 def teardown_db(exception):
     """Tears down and closes Flask"""

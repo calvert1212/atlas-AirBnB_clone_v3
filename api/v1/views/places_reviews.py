@@ -10,7 +10,9 @@ from models import storage
 from flask import jsonify, abort, make_response, request
 
 
-@app_views.route('/cities/<city_id>/places', methods=['GET'], strict_slashes=False)
+@app_views.route('/cities/<city_id>/places',
+                 methods=['GET'],
+                 strict_slashes=False)
 def placesontap(city_id=None):
     """ view Places function """
     placelist = []
@@ -34,7 +36,9 @@ def place_id(place_id=None):
         abort(404)
 
 
-@app_views.route('/places/<place_id>', methods=['DELETE'], strict_slashes=False)
+@app_views.route('/places/<place_id>',
+                 methods=['DELETE'],
+                 strict_slashes=False)
 def place_delete(place_id=None):
     """ delete method function """
     guestplace = storage.get(Place, place_id)
@@ -47,7 +51,9 @@ def place_delete(place_id=None):
         abort(404)
 
 
-@app_views.route('/cities/<city_id>/places', methods=['POST'], strict_slashes=False)
+@app_views.route('/cities/<city_id>/places',
+                 methods=['POST'],
+                 strict_slashes=False)
 def placepost(city_id=None):
     """Post method function"""
     the_city = storage.get(City, city_id)
